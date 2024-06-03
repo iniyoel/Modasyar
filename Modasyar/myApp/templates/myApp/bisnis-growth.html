@@ -1,0 +1,142 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modasyar</title>
+    <link rel="stylesheet" href="{% static 'myApp/css/style.css' %}">
+    <link rel="icon" href="{% static 'myApp/images/logo.png' %}" type="image/x-icon" />
+</head>
+<body>
+    <div class="nav">
+        <div class="logo">
+            <a href="{% url 'dashboardlogged' %}">  
+                <img src="{% static 'myApp/images/logo.png' %}" alt="logo">
+                <p>Moda<span style="color:#436850;">Syar</span></p>
+            </a>
+        </div>
+        <div class="item">
+            <a href="{% url 'explorelogged' %}" class="menu">
+                Telusuri UMKM
+            </a>
+            <a href="{% url 'tingkatkanmodal' %}" class="menu">
+                Tingkatkan Modal
+            </a>
+            <div class="form-control">
+                <input type="value" required="">
+                <label>
+                    <span style="transition-delay:0ms">S</span><span style="transition-delay:50ms">e</span><span style="transition-delay:100ms">a</span><span style="transition-delay:150ms">r</span><span style="transition-delay:200ms">c</span><span style="transition-delay:250ms">h</span>
+                </label>
+            </div>
+            <a href="{% url 'userdashboard' %}" class="menu">
+                profil
+            </a>
+        </div>
+    </div>
+    <div class="user-dash">
+        <div class="user-menu">
+            <a href="{% url 'userdashboard' %}">
+                Profil Pengguna
+            </a>
+            <a href="{% url 'investporto' %}">
+                Portofolio Investasi
+            </a>
+            <a href="{% url 'growth' %}">
+                Perkembangan Bisnis
+            </a>
+            <div class="logout">
+                <a href="{% url 'Dashboard' %}">
+                    Logout
+                </a>
+            </div>
+        </div>
+        <div class="bisnis-growth">
+            <h1>Ringkasan Perkembangan Bisnis</h1>
+            <div class="bisnis-desc">
+                <div class="card">
+                    <img src="{% static 'myApp/images/transaction-desc.png' %}" alt="bisnis">
+                </div>
+                <div class="bisnis-detail">
+                    <h2>Kerajinan Tangan Maju Bersama</h2>
+                    <p>Mudhabarah</p>
+                    <p>PT Maju Bersama</p>
+                    <p>Sektor Kreatif</p>
+                </div>
+            </div>
+            <table id="historyInvestor">
+                <thead>
+                    <tr>
+                        <th>Bulan</th>
+                        <th>Investasi(Rp)</th>
+                        <th>Hasil(Rp)</th>
+                        <th>% Bagi Hasil</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Januari</td>
+                        <td>1.000.000</td>
+                        <td>1.050.000</td>
+                        <td class="positive">+5%</td>
+                    </tr>
+                    <tr>
+                        <td>Februari</td>
+                        <td>-</td>
+                        <td class="negative">950.000</td>
+                        <td class="negative">-5%</td>
+                    </tr>
+                    <tr>
+                        <td>Maret</td>
+                        <td>-</td>
+                        <td class="neutral">900.000</td>
+                        <td class="negative">-10%</td>
+                    </tr>
+                    <tr>
+                        <td>April</td>
+                        <td>-</td>
+                        <td>1.030.000</td>
+                        <td class="positive">+3%</td>
+                    </tr>
+                    <tr>
+                        <td>Mei</td>
+                        <td>-</td>
+                        <td>1.100.000</td>
+                        <td class="positive">+10%</td>
+                    </tr>
+                    <tr>
+                        <td>Juni</td>
+                        <td>-</td>
+                        <td>1.130.000</td>
+                        <td class="positive">+13%</td>
+                    </tr>
+                    <tr class="total-row">
+                        <td colspan="2">Total Investasi</td>
+                        <td colspan="2">1.000.000</td>
+                    </tr>
+                    <tr class="total-row">
+                        <td colspan="2">Total Bagi Hasil</td>
+                        <td colspan="2">130.000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <footer>
+        <div class="support">
+          <p>Didukung dan Diawasi Oleh :</p>
+          <div class="logo">
+            <img src="{% static 'myApp/images/ojk-logo.png' %}" alt="ojk-logo" />
+            <img src="{% static 'myApp/images/afsi-logo.png' %}" alt="afsi-logo" />
+          </div>
+        </div>
+        <div class="menu">
+          <h3>Pelajari Kami</h3>
+          <a href="{% url 'aboutUslogged' %}">About Us</a>
+          <a href="#SnK">Syarat & Ketentuan</a>
+          <a href="#KebijakanPrivasi">Kebijakan Privasi</a>
+        </div>
+      </footer>
+</body>
+</html>

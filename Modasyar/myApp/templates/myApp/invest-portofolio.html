@@ -1,0 +1,92 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modasyar</title>
+    <link rel="stylesheet" href="{% static 'myApp/css/style.css' %}">
+    <link rel="icon" href="{% static 'myApp/images/logo.png' %}" type="image/x-icon" />
+    <script src="{% static 'myApp/js/script.js' %}"></script>
+</head>
+<body>
+    <div class="nav">
+        <div class="logo">
+            <a href="{% url 'dashboardlogged' %}">  
+                <img src="{% static 'myApp/images/logo.png' %}" alt="logo">
+                <p>Moda<span style="color:#436850;">Syar</span></p>
+            </a>
+        </div>
+        <div class="item">
+            <a href="{% url 'explorelogged' %}" class="menu">
+                Telusuri UMKM
+            </a>
+            <a href="{% url 'tingkatkanmodal' %}" class="menu">
+                Tingkatkan Modal
+            </a>
+            <div class="form-control">
+                <input type="value" required="">
+                <label>
+                    <span style="transition-delay:0ms">S</span><span style="transition-delay:50ms">e</span><span style="transition-delay:100ms">a</span><span style="transition-delay:150ms">r</span><span style="transition-delay:200ms">c</span><span style="transition-delay:250ms">h</span>
+                </label>
+            </div>
+            <a href="{% url 'userdashboard' %}" class="menu">
+                profil
+            </a>
+        </div>
+    </div>
+    <div class="porto-section">
+        <h1>Hi, <span id="userName"></span></h1>
+        <p>Total Asetmu :</p>
+        <h2>Rp <span id="#">80.000.000</span></h2>
+        <p style="font-family: 'poppins';">Total Keuntungan <span style="color: #436850; font-family: 'futura';"> Rp <span id="#">8.815.200</span></span></p>
+        <div class="box-porto">
+            <div class="money-detail">
+                <p>Saldo Aktif :</p>
+                <h2> Rp <span id="#">3.450.000</span></h2>
+            </div>
+            <div class="money-management">
+                <a href="#" class="menu-management">
+                    <img src="{% static 'myApp/images/topup.png' %}" alt="topup">
+                    <p>Topup</p>
+                </a>
+                <a href="#" class="menu-management">
+                    <img src="{% static 'myApp/images/withdraw.png' %}" alt="withdraw">
+                    <p>withdraw</p>
+                </a>
+            </div>
+        </div>
+        <div class="box-porto">
+            <div class="money-detail">
+                <h2>Pendanaan Aktif</h2>
+                <p>Kamu sedang mendanai <span id="#">7</span> mitra UMKM</p>
+                <p>Sisa pokok:</p>
+                <h2>Rp <span id="#">73.460.000</span></h2>
+            </div>
+            <div class="money-detail">
+                <a href="#">Danai Lagi</a>
+                <p>Bagi hasil diterima :</p>
+                <h2 style="color: #436850;">Rp <span id="#">8.815.200</span></h2>
+            </div>
+        </div>
+        <div class="detail-porto">
+            <a href="{% url 'detailporto' %}">Detail Portofolio</a>
+        </div>
+    </div>
+    <footer>
+        <div class="support">
+          <p>Didukung dan Diawasi Oleh :</p>
+          <div class="logo">
+            <img src="{% static 'myApp/images/ojk-logo.png' %}" alt="ojk-logo" />
+            <img src="{% static 'myApp/images/afsi-logo.png' %}" alt="afsi-logo" />
+          </div>
+        </div>
+        <div class="menu">
+          <h3>Pelajari Kami</h3>
+          <a href="{% url 'aboutUslogged' %}">About Us</a>
+          <a href="#SnK">Syarat & Ketentuan</a>
+          <a href="#KebijakanPrivasi">Kebijakan Privasi</a>
+        </div>
+      </footer>
+</body>
+</html>

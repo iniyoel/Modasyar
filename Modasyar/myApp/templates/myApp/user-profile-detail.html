@@ -1,0 +1,95 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ModaSyar</title>
+    <link rel="icon" href="{% static 'myApp/images/logo.png'%}" type="image/x-icon" />
+    <link rel="stylesheet" href="{% static 'myApp/css/style.css'%}">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+</head>
+<body>
+    <div class="nav">
+        <div class="logo">
+            <a href="{% url 'dashboardlogged' %}">  
+                <img src="{% static 'myApp/images/logo.png' %}" alt="logo">
+                <p>Moda<span style="color:#436850;">Syar</span></p>
+            </a>
+        </div>
+        <div class="item">
+            <a href="{% url 'explorelogged' %}" class="menu">
+                Telusuri UMKM
+            </a>
+            <a href="{% url 'tingkatkanmodal' %}" class="menu">
+                Tingkatkan Modal
+            </a>
+            <div class="form-control">
+                <input type="value" required="">
+                <label>
+                    <span style="transition-delay:0ms">S</span><span style="transition-delay:50ms">e</span><span style="transition-delay:100ms">a</span><span style="transition-delay:150ms">r</span><span style="transition-delay:200ms">c</span><span style="transition-delay:250ms">h</span>
+                </label>
+            </div>
+            <a href="{% url 'userdashboard' %}" class="menu">
+                profil
+            </a>
+        </div>
+    </div>
+    <div class="userdetail-content">
+        <form class="form">
+            <p class="title">Detail Pengguna </p>
+            <p class="message">Lengkapi data diri anda untuk melanjutkan. </p>
+                <div class="flex">
+                    <label>
+                        <input id="firstName" placeholder="" type="text" name="firstName" class="input" required >
+                        <span>Nama Depan</span>
+                    </label>
+                    <label>
+                        <input id="lastName" placeholder="" type="text" name="lastName" class="input" required>
+                        <span>Nama Belakang</span>
+                    </label>
+                </div>
+            <label>
+                <input id="userName" type="text" name="userName" class="input" placeholder="" required>
+                <span>Nama Pengguna</span>
+            </label>
+            <label>
+                <input id="phoneNumber" type="tel" placeholder="" id="phoneNumber" name="phoneNumber" pattern="[0-9]{10}" class="input" required>
+                <span>Nomor Telepon</span>
+            </label> 
+            <label>
+                <input id="birthDate" placeholder="" type="date" name="birthDate" class="input" required>
+            </label>
+            <button class="submit" onclick="submitForm()">Konfirmasi</button>
+        </form>
+    </div>
+    <script>
+        function submitForm() {
+            var firstName = document.getElementById("firstName").value;
+            var lastName = document.getElementById("lastName").value;
+            var userName = document.getElementById("userName").value;
+            var phoneNumber = document.getElementById("phoneNumber").value;
+            var birthDate = document.getElementById("birthDate").value;
+
+            var userDetails = {
+                firstName: firstName,
+                lastName: lastName,
+                userName: userName,
+                phoneNumber: phoneNumber,
+                birthDate: birthDate,
+            };
+
+            // Simpan userDetails ke localStorage
+            localStorage.setItem('userDetails', JSON.stringify(userDetails));
+
+            // Contoh: Tautan ke halaman profil pengguna
+            window.location.href = "{% url 'userdashboard'%}";
+        }
+    </script>
+</body>
+</html>
