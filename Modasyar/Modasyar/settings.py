@@ -91,8 +91,8 @@ SOCIALACCOUNT_PROVIDERS = {
             'email'
         ],
         'APP': {
-            'client_id': '642862851105-7tn8k5l3kgn9pq5t5dmbkivciq65213k.apps.googleusercontent.com',
-            'secret': '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',
+            'client_id': 'API-google',
+            'secret': 'API-google',
         },
         'AUTH_PARAMS': {
             'access_type':'online',
