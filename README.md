@@ -9,4 +9,3 @@ How to run  :
 3. go to folder modasyar in terminal : cd modasyar
 4. run the django server in terminal : py manage.py runserver
 5. copy and paste the server link to the browser then add /app in the end to see the website
-6. enjoy
